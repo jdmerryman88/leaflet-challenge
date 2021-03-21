@@ -25,3 +25,11 @@ L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(map);
 }
+
+function createMarkers(response){
+
+    let incidents = response.features;
+    console.log(incidents);
+}
+
+d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(createMarkers);
