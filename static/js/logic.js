@@ -75,7 +75,7 @@ function createMap(earthquakes) {
         for (let i = 0; i < magnitudes.length; i++) {
             div.innerHTML +=
             
-            '<i style="background:' + getColor(magnitudes[i] + 1) + '"></i>' + magnitudes[i] + (magnitudes[i + 1] ? '&ndash;' + magnitudes[i + 1] + '<br>' : '+');
+            '<i style="background:' + getColor(magnitudes[i] + 1) + '"></i>' + '<br>' + magnitudes[i] + (magnitudes[i + 1] ? '&ndash;' + magnitudes[i + 1] + '<br>' : '+');
         }
         return div
     };
