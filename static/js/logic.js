@@ -70,10 +70,11 @@ function createMap(earthquakes) {
     legend.onAdd = function(myMap) {
         const div = L.DomUtil.create('div', 'info legend')
         const magnitudes = [0, 1, 2, 3, 4, 5]
-        const labels = []
+        
 
         for (let i = 0; i < magnitudes.length; i++) {
             div.innerHTML +=
+            
             '<i style="background:' + getColor(magnitudes[i] + 1) + '"></i>' + magnitudes[i] + (magnitudes[i + 1] ? '&ndash;' + magnitudes[i + 1] + '<br>' : '+');
         }
         return div
