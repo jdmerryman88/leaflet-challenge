@@ -28,9 +28,11 @@ function createMap(earthquakes) {
 
     const outdoors = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
       attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-        maxZoom: 20,
-        id: 'mapbox.outdoors',
-        accessToken: API_KEY
+      tileSize: 512,
+      maxZoom: 18,
+      zoomOffset: -1,
+      id: "mapbox/streets-v11",
+      accessToken: API_KEY
     });
 
     const baseMap = {
@@ -82,7 +84,7 @@ function createMap(earthquakes) {
 
 function createFeatures(eqdata) {
     function onEachFeature(feature, layer) {
-        layer.bindPopup('<h4>Place: ' + feature.properties.place + '</h4><h4>Date: ' + new Date(feature.properties.time) + '</h4><h4>Magnitude: ' + feature.properties.mag + '</h4><h4>USGS Event Page: <a href=' + feature.properties.url + " target='_blank'>Click here</a></h4>", {maxWidth: 400})
+        layer.bindPopup(`<h4>Place: ${feature.properties.place} </h4><h4>Date:  ${new Date(feature.properties.time)} </h4><h4>Magnitude: ${feature.properties.mag} </h4><h4>USGS Event Page: <a href=  ${feature.properties.url}  " target='_blank'>Click here</a></h4>`, {maxWidth: 400})
     }
 
     const layerToMap = L.geoJSON(eqdata, {
