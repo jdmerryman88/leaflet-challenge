@@ -92,7 +92,7 @@ function createFeatures(eqdata) {
         onEachFeature: onEachFeature,
         pointToLayer: function(feature, latlng) {
             let radius = feature.properties.mag * 4.5;
-            let fill = feature.properties.rms*5;
+            let fill = feature.geometry.coordinates[2] / 30;
             if (feature.properties.mag > 5) {
                 fillcolor = '#991900';
             }
