@@ -62,7 +62,7 @@ function createMap(earthquakes) {
             d > 3 ? '#FF8000' :
             d > 2 ? '#FFEE99' :
             d > 1 ? '#3399FF' :
-                    '#b7f34d';
+                    '#B7F34D';
     }
 
     var legend = L.control({position: 'bottomright'});
@@ -92,7 +92,7 @@ function createFeatures(eqdata) {
         onEachFeature: onEachFeature,
         pointToLayer: function(feature, latlng) {
             let radius = feature.properties.mag * 4.5;
-
+            let fill = feature.properties.rms*5;
             if (feature.properties.mag > 5) {
                 fillcolor = '#991900';
             }
@@ -114,7 +114,7 @@ function createFeatures(eqdata) {
                 radius: radius,
                 color: 'black',
                 fillColor: fillcolor,
-                fillOpacity: 1,
+                fillOpacity: fill,
                 weight: 1
             });
         }
