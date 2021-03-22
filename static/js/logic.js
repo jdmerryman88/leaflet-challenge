@@ -57,11 +57,11 @@ function createMap(earthquakes) {
 
     // function to assign colors for legend and markers
     function getColor(d) {
-        return d > 5 ? '#f06b6b' :
-            d > 4 ? '#f0936b' :
-            d > 3 ? '#f3ba4e' :
-            d > 2 ? '#f3db4c' :
-            d > 1 ? '#e1f34c' :
+        return d > 5 ? '#991900' :
+            d > 4 ? '#9500B3' :
+            d > 3 ? '#FF8000' :
+            d > 2 ? '#FFEE99' :
+            d > 1 ? '#3399FF' :
                     '#b7f34d';
     }
 
@@ -94,19 +94,19 @@ function createFeatures(eqdata) {
             let radius = feature.properties.mag * 4.5;
 
             if (feature.properties.mag > 5) {
-                fillcolor = '#f06b6b';
+                fillcolor = '#991900';
             }
             else if (feature.properties.mag >= 4) {
-                fillcolor = '#f0936b';
+                fillcolor = '#9500B3';
             }
             else if (feature.properties.mag >= 3) {
-                fillcolor = '#f3ba4e';
+                fillcolor = '#FF8000';
             }
             else if (feature.properties.mag >= 2) {
-                fillcolor = '#f3db4c';
+                fillcolor = '#FFEE99';
             }
             else if (feature.properties.mag >= 1) {
-                fillcolor = '#e1f34c';
+                fillcolor = '#3399FF';
             }
             else  fillcolor = '#b7f34d';
 
