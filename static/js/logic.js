@@ -8,6 +8,7 @@ d3.json(link).then((data) => {
     console.log(data.features);
 });
 
+
 function createMap(earthquakes) {
     // assign the different mapbox styles
     const satellite = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
