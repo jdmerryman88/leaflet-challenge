@@ -56,12 +56,12 @@ function createMap(earthquakes) {
     }).addTo(myMap);
 
     // function to assign colors for legend and markers
-    function getColor(d) {
-        return d > 5 ? '#991900' :
-            d > 4 ? '#9500B3' :
-            d > 3 ? '#FF8000' :
-            d > 2 ? '#FFEE99' :
-            d > 1 ? '#3399FF' :
+    function getColor(mag) {
+        return mag > 5 ? '#991900' :
+            mag > 4 ? '#9500B3' :
+            mag > 3 ? '#FF8000' :
+            mag > 2 ? '#FFEE99' :
+            mag > 1 ? '#3399FF' :
                     '#B7F34D';
     }
 
