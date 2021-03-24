@@ -26,7 +26,7 @@ function createMap(earthquakes) {
       accessToken: API_KEY
     });
 
-    const outdoors = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    const streets = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
       attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
       tileSize: 512,
       maxZoom: 18,
@@ -38,7 +38,7 @@ function createMap(earthquakes) {
     const baseMap = {
         'Satellite': satellite,
         'Grayscale': grayscale,
-        'Outdoors': outdoors
+        'Streets': streets
     };
 
     const overlayMap = {
@@ -48,7 +48,7 @@ function createMap(earthquakes) {
     const myMap = L.map('map', {
         center: [36.7126875, -120.476189],
         zoom: 4,
-        layers: [outdoors, earthquakes]
+        layers: [streets, earthquakes]
     });
 
     L.control.layers(baseMap, overlayMap, {
